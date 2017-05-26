@@ -3,15 +3,14 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-body2 table-responsive">
-        <div class="box-header" style="cursor: move;">
-          <h3 class="box-title"><strong>Detail Per Menu</strong></h3>
+        <div class="box-header">
+          <h3 class="box-title"><strong>Detail Per Pijat</strong></h3>
         </div>
         <table id="list_item_tb" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th width="5%">No</th>
-              <th>Nama Menu</th>
-              <th>Owner</th>
+              <th>Nama Pijat</th>
               <th>Qty</th>
               <th>Omset</th>
             </tr>
@@ -27,7 +26,6 @@
             <tr>
               <td><?= $no_item ?></td>
               <td><?= $row_item['menu_name']; ?></td>
-              <td><?= $row_item['partner_name']; ?></td>
               <td><?= tool_format_number($jumlah)?></td>
               <td><?= tool_format_number($row_item['jumlah_omset'])?></td>
             </tr>

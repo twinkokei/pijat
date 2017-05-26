@@ -6,7 +6,7 @@ $title = array(
 		"Total Transaksi",
 		"Pijat Terlaris"
 		);
-// $content = array($jumlah_hari, $jumlah_penjualan, "<span style='font-size:20px'>Rp. </span>".$total_penjualan, $menu_terlaris);
+ $content = array($jumlah_hari, $jumlah_penjualan, "<span style='font-size:20px'>Rp. </span>".$total_penjualan, $pijat_terlaris);
 for($i=0; $i<=3; $i++){
 ?>
                         <div class="col-lg-3 col-xs-6" >

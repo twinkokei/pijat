@@ -68,7 +68,7 @@ switch ($page) {
 			$jumlah_hari = $difference->days + 1;
 			$jumlah_penjualan = get_jumlah_penjualan($date1, $date2);
 			$total_penjualan = number_format(get_total_penjualan($date1, $date2), 0);
-			// $menu_terlaris = get_menu_terlaris($date1, $date2);
+			$pijat_terlaris = get_pijat_terlaris($date1, $date2);
 
 			include '../views/report_detail/form_result.php';
 			include '../views/report_detail/list_item.php';
