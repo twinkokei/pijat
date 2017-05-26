@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-body2 table-responsive">
-      <div class="box-header" style="cursor: move;">
+      <div class="box-header">
       <h3 class="box-title"><strong>List Transaksi</strong></h3>
       </div>
         <table id="transaction_tb" class="table table-bordered table-striped">
@@ -10,7 +10,6 @@
             <tr>
               <th width="5%">No</th>
               <th>Tanggal</th>
-              <th>Meja</th>
               <th>Total</th>
               <th>Bayar</th>
               <th>Kembali</th>
@@ -24,9 +23,6 @@
             <tr>
               <td><?= $no_tr?></td>
               <td><?= $row_tr['transaction_date']?></td>
-              <td><?php
-              $building = ($row_tr['table_id']!=0) ? " (".$row_tr['building_name'].")" : "";
-              echo $row_tr['table_name'].$building; ?></td>
               <td><?= tool_format_number($row_tr['transaction_total'])?></td>
               <td><?= tool_format_number($row_tr['transaction_payment'])?></td>
               <td><?= tool_format_number($row_tr['transaction_change'])?></td>

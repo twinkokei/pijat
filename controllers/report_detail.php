@@ -68,7 +68,7 @@ switch ($page) {
 			$jumlah_hari = $difference->days + 1;
 			$jumlah_penjualan = get_jumlah_penjualan($date1, $date2);
 			$total_penjualan = number_format(get_total_penjualan($date1, $date2), 0);
-			$menu_terlaris = get_menu_terlaris($date1, $date2);
+			// $menu_terlaris = get_menu_terlaris($date1, $date2);
 
 			include '../views/report_detail/form_result.php';
 			include '../views/report_detail/list_item.php';
@@ -145,7 +145,7 @@ switch ($page) {
 				$supplier = get_data_owner($i_owner_id);
 			}
 
-			$query_item = select_detail($date1, $date2, $i_owner_id);
+			// $query_item = select_detail($date1, $date2, $i_owner_id);
 
 			//fungsi backup
 			$datetime1 = new DateTime($date1);
@@ -198,7 +198,7 @@ switch ($page) {
 				$supplier = get_data_owner($i_owner_id);
 			}
 
-			$query_item = select_detail($date1, $date2, $i_owner_id);
+			// $query_item = select_detail($date1, $date2, $i_owner_id);
 
 			//fungsi backup
 			$datetime1 = new DateTime($date1);
@@ -245,7 +245,7 @@ switch ($page) {
 				$supplier = get_data_owner($i_owner_id);
 			}
 
-			$query_item = select_detail($date1, $date2, $i_owner_id);
+			// $query_item = select_detail($date1, $date2, $i_owner_id);
 
 			//fungsi backup
 			$datetime1 = new DateTime($date1);
@@ -293,7 +293,7 @@ switch ($page) {
 
                         $transport_service_komulatif = get_transport_service_komulatif();
 
-			$query_item = select_detail($date1, $date2, $i_owner_id);
+			// $query_item = select_detail($date1, $date2, $i_owner_id);
 
 			//fungsi backup
 			$datetime1 = new DateTime($date1);

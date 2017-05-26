@@ -2,7 +2,7 @@
 
 function select_detail($date1, $date2){
 
-	$query = mysql_query("SELECT a.menu_id , a.menu_price, a.menu_name, b.jumlah, jumlah_dasar, jumlah_omset, c.partner_name
+	$query = mysql_query("SELECT a.pijat_id , a.pijat_harga, a.pijat_name, b.jumlah, jumlah_dasar, jumlah_omset, c.partner_name
 								FROM menus a
 								JOIN (
 
@@ -25,10 +25,8 @@ function select_detail($date1, $date2){
 
 function select_transaction($date1, $date2){
 
-	$query = mysql_query("select b.*, c.table_name, d.building_name
+	$query = mysql_query("select b.*
 									from transactions b
-									left join tables c on c.table_id = b.table_id
-									left join buildings d on d.building_id = c.building_id
 									WHERE  b.transaction_date >= '$date1'
 									AND b.transaction_date <= '$date2'
 									order by transaction_id
@@ -68,26 +66,26 @@ function get_total_penjualan($date1, $date2){
 	return $result;
 }
 
-function get_menu_terlaris($date1, $date2){
-	$query = mysql_query("SELECT a.menu_id, a.menu_price, a.menu_name, jumlah
-								FROM menus a
-								JOIN (
+// function get_menu_terlaris($date1, $date2){
+// 	$query = mysql_query("SELECT a.menu_id, a.menu_price, a.menu_name, jumlah
+// 								FROM menus a
+// 								JOIN (
 
-									SELECT sum( transaction_detail_qty ) AS jumlah, menu_id
-									FROM transaction_details a
-									JOIN transactions b on b.transaction_id = a.transaction_id
-									WHERE  b.transaction_date >= '$date1 00:00:00'
-									AND b.transaction_date <= '$date2 23:59:59'
-									GROUP BY menu_id
-								) AS b ON b.menu_id = a.menu_id
-								order by jumlah desc, menu_id asc
-								limit 1
+// 									SELECT sum( transaction_detail_qty ) AS jumlah, menu_id
+// 									FROM transaction_details a
+// 									JOIN transactions b on b.transaction_id = a.transaction_id
+// 									WHERE  b.transaction_date >= '$date1 00:00:00'
+// 									AND b.transaction_date <= '$date2 23:59:59'
+// 									GROUP BY menu_id
+// 								) AS b ON b.menu_id = a.menu_id
+// 								order by jumlah desc, menu_id asc
+// 								limit 1
 
-							 ");
-	$result = mysql_fetch_array($query);
-	$result = ($result['menu_name']) ? $result['menu_name'] : "-";
-	return $result;
-}
+// 							 ");
+// 	$result = mysql_fetch_array($query);
+// 	$result = ($result['menu_name']) ? $result['menu_name'] : "-";
+// 	return $result;
+// }
 
 function select_partner($date1, $date2){
 	$query = mysql_query("SELECT a.partner_id, a.partner_name, jumlah_qty, jumlah_margin, jumlah_original, jumlah_omset
